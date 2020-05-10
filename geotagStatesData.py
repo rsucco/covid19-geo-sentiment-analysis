@@ -4,6 +4,7 @@
 # This file converts the 'place' field in a dataset of tweets into a two-character 'state' field
 
 from datetime import datetime
+import json
 
 # Declare dictionary of state abbreviations and their full names
 states = {'alabama' : 'AL', 'alaska' : 'AK', 'arizona' : 'AZ', 'arkansas' : 'AR', 'california' : 'CA', 'colorado' : 'CO', 
