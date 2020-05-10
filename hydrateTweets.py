@@ -4,7 +4,6 @@
 # This file reads from the chunks of the full dataset TSV and multithreads the hydration process for each chunk
 # Prior to running this script, run chunkTsv.sh to chunk the TSV file appropriately
 
-import pandas as pd
 import os
 from multiprocessing import Pool, cpu_count
 
