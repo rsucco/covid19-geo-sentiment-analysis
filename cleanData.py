@@ -1,7 +1,8 @@
 # Ryan Succo / Molly Illjevich
 # CS5664 Final Project
 #
-# This file cleans up the data collected from Twitter, retaining only the relevant tweets
+# This file cleans up the data collected from Twitter, retaining only the relevant tweets.
+# If you're running out of memory, try only doing the ones with the geo data.
 
 import json
 import os
@@ -50,7 +51,7 @@ def writeJSON(tweets, filename):
         json.dump(tweets, f, ensure_ascii=False, default = dateConverter, indent=4)
 
 # Get a list of all the data files
-jsonFiles = [files[2] for files in os.walk('./data')][0]
+jsonFiles = [files[2] for files in os.walk('data')][0]
 jsonFiles = ["data/" + jsonFile for jsonFile in jsonFiles if '.json' in jsonFile]
 
 # Clean and all the tweets and write them to one JSON file
@@ -61,10 +62,10 @@ geoTweets['tweets'] = []
 for jsonFile in jsonFiles:
     print("Cleaning", jsonFile)
     cleanJson = cleanFile(jsonFile, True)['tweets']
-    geoTweets['tweets'].extend(cleanJson)
+    geoTweets['tweets'].extend(list(cleanJson))
     cleanJson = cleanFile(jsonFile, False)['tweets']
     allTweets['tweets'].extend(cleanJson)
 print("geotweets", len(geoTweets['tweets']))
 print("alltweets", len(allTweets['tweets']))
-writeJSON(geoTweets, 'tweets-cleaned-with-geo.json')
-writeJSON(allTweets, 'tweets-cleaned-all.json')
+writeJSON("There are", geoTweets, 'tweets in tweets-cleaned-with-geo.json')
+writeJSON("There are", allTweets, 'tweets in tweets-cleaned-all.json')

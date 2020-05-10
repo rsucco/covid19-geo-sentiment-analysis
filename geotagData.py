@@ -1,5 +1,5 @@
 import json
-from geopy.geocoders import Nominatim
+from datetime import datetime
 
 # Declare dictionary of state abbreviations and their full names
 states = {'alabama' : 'AL', 'alaska' : 'AK', 'arizona' : 'AZ', 'arkansas' : 'AR', 'california' : 'CA', 'colorado' : 'CO', 
@@ -19,7 +19,7 @@ def getStates(tweets):
     # Convert any placenames to states
     for tweet in tweets['tweets']:
         try:
-            if tweet['place']['country_code'] == 'US':
+            if tweet['place']['country_code'] == 'US' and tweet['id'] not in (i['id'] for i in newTweets['tweets']):
                 newTweet = tweet.copy()
                 if tweet['place']['full_name'][-2:] in states.values():
                     newTweet['state'] = tweet['place']['full_name'][-2:]
@@ -38,7 +38,10 @@ def getStates(tweets):
                 newTweets['tweets'].append(newTweet)            
         except:
             continue
-    return newTweets
+    
+    finalTweets = {}
+    finalTweets['tweets'] = sorted(newTweets['tweets'], key = lambda i: i['timestamp'])
+    return finalTweets
 
 # Default parameter for json.dumps to convert datetime objects to strings
 def dateConverter(toConvert):
@@ -56,3 +59,4 @@ with open('./tweets-cleaned-with-geo.json') as f:
 tweets = getStates(tweets)
 print(len(tweets['tweets']))
 writeJSON(tweets, './tweets-cleaned-with-state.json')
+print("Tweets written to ./tweets-cleaned-with-state.json")
