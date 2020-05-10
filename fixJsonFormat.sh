@@ -6,6 +6,7 @@
 
 cd ./data
 gunzip full_dataset.tsv.gz
+unzip ihme-covid19.zip
 for filename in `ls *.tweets`; do
     dos2unix $filename
     sed '1i{"tweets": [' $filename > temp
