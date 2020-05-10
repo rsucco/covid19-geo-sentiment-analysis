@@ -272,13 +272,9 @@ def calculateRatios(normalizedSentiments, cdcData):
 with open('./tweets-states-sentiment.json') as f:
     tweets = json.load(f)
 
-numRanges = int(input("Enter number of date ranges to generate. Higher numbers will increase the granuality in the time dimension \
-but will lead to smaller sample sizes and less accurate data. (Default 4)\n") or 4)
+numRanges = int(input("Enter number of date ranges to generate. Higher numbers will increase the granuality in the time dimension but will lead to smaller sample sizes and less accurate data. (Default 4)\n") or 4)
 
-typesStr = str(input("Enter the types of sentiment that you would like to analyze in the format cpnu\n\
-For instance, enter cp to analyze compound and positive, n to analyze just negative, un for neutral and negative.\n\
-Reports will be displayed in the order that you enter their letters.\n\
-c: compound, p: positive, n: negative, u: neutral. (Default all)\n") or 'cpnu')
+typesStr = str(input("Enter the types of sentiment that you would like to analyze in the format cpnu\nFor instance, enter cp to analyze compound and positive, n to analyze just negative, un for neutral and negative.\nReports will be displayed in the order that you enter their letters.\nc: compound, p: positive, n: negative, u: neutral. (Default all)\n") or 'cpnu')
 
 sentimentTypes = []
 for char in typesStr:
