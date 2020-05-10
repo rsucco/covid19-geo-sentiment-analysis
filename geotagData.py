@@ -1,4 +1,8 @@
-import json
+# Ryan Succo / Molly Illjevich
+# CS5664 Final Project
+#
+# This file converts the 'place' field in a dataset of tweets into a two-character 'state' field
+
 from datetime import datetime
 
 # Declare dictionary of state abbreviations and their full names
