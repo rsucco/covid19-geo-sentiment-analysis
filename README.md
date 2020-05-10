@@ -8,10 +8,11 @@ Arch Linux:
     sudo pip uninstall shapely
     sudo pip install nltk==3.5 pandas==1.0.1 tweepy==3.8.0 numpy==1.18.4 pyshp==2.1.0
     sudo pip install shapely --no-binary shapely
+    sudo pip install cartopy
 Ubuntu:
 
     sudo apt update && sudo apt install geos dos2unix python3 python3-pip
     sudo pip3 uninstall shapely
     sudo pip3 install nltk==3.5 pandas==1.0.1 tweepy==3.8.0 numpy==1.18.4 pyshp==2.1.0
     sudo pip3 install shapely --no-binary shapely
-
+    sudo pip3 install cartopy
