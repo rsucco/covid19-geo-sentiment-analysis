@@ -62,7 +62,7 @@ geoTweets['tweets'] = []
 for jsonFile in jsonFiles:
     print("Cleaning", jsonFile)
     cleanJson = cleanFile(jsonFile, True)['tweets']
-    geoTweets['tweets'].extend(list(cleanJson))
+    geoTweets['tweets'].extend(cleanJson)
     cleanJson = cleanFile(jsonFile, False)['tweets']
     allTweets['tweets'].extend(cleanJson)
 print("geotweets", len(geoTweets['tweets']))
