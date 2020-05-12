@@ -1,4 +1,3 @@
-# Final project for CS5664
 ## Initial setup
 You must install the following packages in order to run this code. I've compiled instructions for installation on Ubuntu and Arch Linux:
 
