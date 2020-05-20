@@ -8,12 +8,13 @@ Arch Linux:
 Ubuntu:
 
     sudo apt update && sudo apt install libgeos libgeos-dev geos dos2unix python3 python3-pip
+    sudo pip3 install --user https://github.com/matplotlib/basemap/archive/master.zip
     sudo pip3 install nltk pandas tweepy numpy pyshp pytz matplotlib 
 macOS:
 
     mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
     brew install python3 dos2unix geos
-    pip3 install https://github.com/matplotlib/basemap/archive/master.zip
+    pip3 install --user https://github.com/matplotlib/basemap/archive/master.zip
     pip3 install nltk pandas tweepy numpy pyshp pytz matplotlib 
     
 You must also ensure that you have a JSON file name api_keys.json in the top-level directory of the project. In this file, you must have fields for 'consumer_key', 'consumer_secret', 'access_token', and 'access_token_secret'. These will be given to you by Twitter upon approval to use their API.
