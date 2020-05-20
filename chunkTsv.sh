@@ -5,6 +5,8 @@
 # This file chunks the large full_dataset.tsv file into more manageable chunks
 
 cd ./data
+gunzip full_dataset.tsv.gz
+unzip ihme-covid19.zip
 split -l 150000 full_dataset.tsv data-
 
 for file in `ls data-* | grep -v data-aa`; do
