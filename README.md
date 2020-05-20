@@ -1,5 +1,5 @@
 ## Initial setup
-You must install some packages in order to run this code. I've only tested this on Linux, although I've included what should be valid instructions of macOS, and Windows users should be able to follow the Ubuntu instructions within Windows Subsystem for Linux. I plan to containerize this application eventually which should make things easier. For now, I've written setup instructions for Arch Linux, Ubuntu, and macOS:
+You must install some packages in order to run this code. I've only tested this on Linux, although I've included what should be valid instructions for macOS, and Windows users should be able to follow the Ubuntu instructions using Windows Subsystem for Linux. I plan to containerize this application eventually which should make things easier. For now, I've written setup instructions for Arch Linux, Ubuntu, and macOS:
 
 Arch Linux:
 
